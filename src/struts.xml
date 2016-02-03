@@ -7,13 +7,30 @@
 
 
 	<package name="default" namespace="/" extends="struts-default">
-		
+
+
+
+		<!-- Configure using paramsPrepareParamsStack as default intercepter -->
+		<!-- Modify PrepareInterceptor's "alwaysInvokePrepare" attribute to false -->
+
+		<interceptors>
+			<interceptor-stack name="tonyStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+
+		<default-interceptor-ref name="tonyStack"/>
+
+
 		<action name="emp-*" class="com.tony.struts2.app.EmployeeAction"
 			method="{1}">
 			<result name="{1}">/emp-{1}.jsp</result>
-			<result name="delete" type="redirectAction">emp-list</result>
-			</action>
-		
+			<result name="success" type="redirectAction">emp-list</result>
+		</action>
+
 	</package>
 
 

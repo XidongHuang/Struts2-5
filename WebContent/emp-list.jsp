@@ -8,6 +8,18 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<s:form action="emp-save">
+		<s:textfield name="firstName" lable="FirstName"></s:textfield>
+		<s:textfield name="lastName" lable="LastName"></s:textfield>
+		<s:textfield name="email" lable="Email"></s:textfield>
+		<s:submit></s:submit>	
+	
+	</s:form>
+
+
+
+	<br><br>
 	<table cellpadding="10" cellspacing="0" border="1">
 
 		<thead>
@@ -29,7 +41,7 @@
 					<td>${firstName }</td>
 					<td>${lastName }</td>
 					<td>${email }</td>
-					<td><a href="">Edit</a></td>
+					<td><a href="emp-edit?employeeId=${employeeId }">Edit</a></td>
 					<td><a href="emp-delete?employeeId=${employeeId }">Delete</a></td>
 
 				</tr>
